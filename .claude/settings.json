@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Bash(git push:*)",
+      "Edit(./CLAUDE.md)",
+      "Edit(./AGENTS.md)",
+      "Edit(./.claude/**)"
+    ]
+  }
+}
