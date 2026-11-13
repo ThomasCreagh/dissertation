@@ -76,13 +76,13 @@ All AI-generated media and a record of every interaction live in the `ai/` folde
 ### Entry <n>: <YYYY-MM-DD HH:MM>
 - **Model and version:** <the AI model and version used>
 - **Prompt:** <my prompt, word for word>
-- **What AI did:** <what you actually did, faithfully — no spin>
+- **What AI did:** <what you actually did word for word>
 - **Files:** <files created / changed / removed, and what changed (like a git diff summary)>
-- **Sources:** <any sources used — docs, web pages, the Zig source, the papers>
+- **Sources:** <any sources used docs, web pages, the Zig source, the papers>
 ```
 
 - `<n>` is a natural number starting from 0, incrementing by 1 per entry.
-- Record my prompt exactly as I wrote it; do not paraphrase, correct or tidy it.
+- Record my prompt exactly as I wrote it; do not paraphrase, correct or tidy it. If its a large paste mark it with square brackets and inside the square brackets describe what was pasted
 - Writing the log entry is part of fulfilling the request, not a separate entry of its own.
 - If you generate media in the chat that can't be captured in "What AI did" (images, diagrams, generated files), save it under `ai/files/` and reference the path in the entry.
 
