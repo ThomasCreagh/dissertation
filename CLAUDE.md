@@ -1,4 +1,4 @@
-# AGENTS.md Working on this dissertation with me
+# CLAUDE.md
 
 This repository is **Tom Creagh's final-year Computer Science dissertation** (Trinity College Dublin) on **Zig's memory safety from a security and performance angle**.
 
