@@ -73,18 +73,34 @@ All AI-generated media and a record of every interaction live in the `ai/` folde
 **Log every interaction.** After responding to any prompt I send no matter how small, append one entry to `ai/ai-log.md`, using this exact format:
 
 ```
-### Entry <n>: <YYYY-MM-DD HH:MM>
-- **Model and version:** <the AI model and version used>
-- **Prompt:** <my prompt, word for word>
-- **What AI did:** <what you actually did word for word>
-- **Files:** <files created / changed / removed, and what changed (like a git diff summary)>
-- **Sources:** <any sources used docs, web pages, the Zig source, the papers>
+## Entry <n>: <YYYY-MM-DD HH:MM>
+### Model and version:
+<the AI model and version used>
+### Prompt:
+<my prompt, word for word>
+### What AI did:
+#### Commands run
+<What commands you run each one exactly how you ran it>
+#### Answer
+<The actually text answer you gave me verbatium>
+### Files
+#### Created
+<files created with what was added to the created file (like a git diff summary)>
+#### Changed
+<files changed with what changed (like a git diff summary)>
+#### Removed
+<files removed>
+### Sources
+<any sources used docs, web pages, the Zig source, the papers>
+
+
 ```
 
 - `<n>` is a natural number starting from 0, incrementing by 1 per entry.
 - Record my prompt exactly as I wrote it; do not paraphrase, correct or tidy it. If its a large paste mark it with square brackets and inside the square brackets describe what was pasted
 - Writing the log entry is part of fulfilling the request, not a separate entry of its own.
 - If you generate media in the chat that can't be captured in "What AI did" (images, diagrams, generated files), save it under `ai/files/` and reference the path in the entry.
+- If any sources are used like urls or links that I used add them to the `sources/public/links.md` if they are not their.
 
 **Undo.** If I type `undo` (or an obvious equivalent "undo that", "scratch that", "ignore that"):
 - Revert the last action you took (the file changes recorded in the most recent entry), and
@@ -96,7 +112,7 @@ This is for when I mistype, ask the wrong question, or change my mind. Treat `un
 
 Living files carry the project state between sessions, so a fresh agent or a future me can pick up where I left off. Keep them current as part of the work, not as an afterthought.
 
-- **`ai/state.md`** where the project actually is: the settled direction, what's been verified in the Zig source, paper findings, the open questions, and what's been ruled out. This holds everything an agent should know that isn't in `AGENTS.md`. Division of labour: `AGENTS.md` holds the rules, the state file holds the state. When something material changes a decision made, a finding confirmed, a dead end closed update the relevant section rather than letting it drift.
+- **`ai/state.md`** where the project actually is: the settled direction, what's been verified in the Zig source, paper findings, the open questions, and what's been ruled out. This holds everything an agent should know that isn't in `CLAUDE.md`. Division of labour: `AGENTS.md` holds the rules, the state file holds the state. When something material changes a decision made, a finding confirmed, a dead end closed update the relevant section rather than letting it drift.
 - **`ai/todo.md`** the near-term task list supporting the memory file: concrete next steps (e.g. write the 0.16 debug allocator experiment"). Tick items off and add new ones as the work moves.
 - **`notes/*`** ensure notes are updated with confirmation from user on findings.
 
@@ -124,7 +140,7 @@ All work here is defensive research on local code in this machine's sandbox: hea
 
 ### Read-only
 - `sources/private/papers/`: papers I've collected. Read, discuss, cite and log them normally. They are kept out of git only because the PDFs are not mine to redistribute. If a patched build is needed, copy it into `experiments/` first.
-- `CLAUDE.md/` (this file): read, comply. Do not modify. If you feel something would be worth changing or editting bring it up and I will consider changing it.
+- `CLAUDE.md` (this file): read, comply. Do not modify. If you feel something would be worth changing or editting bring it up and I will consider changing it.
 
 ### Confidential: read, but don't reproduce
 - `sources/confidential/`: material shared with me under a confidentiality agreement (e.g. Anthropic CVP guidance). You may read it and follow its guidance. Do not quote, summarise or paraphrase its contents in any file, log entry, commit message or generated output. In `ai/ai-log.md`:
@@ -154,4 +170,4 @@ Stop and tell me plainly if you:
 - find you have network access or permissions beyond what is listed here
 - are unsure whether a step is within scope
 
-AI was used to help me generate this context for future agents which I read and chagned
+AI was used to help me generate this context for future agents which I read and changed
