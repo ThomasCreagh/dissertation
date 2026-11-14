@@ -65,6 +65,7 @@ What is marked (CSU44099, per the official module page https://teaching.scss.tcd
 
 ## Repo conventions
 - `notes.md` template for experiments (see `experiments/experiment.md`): Question / What I ran / What happened / What I made of it / Decisions.
+- Use the `flake.nix` with `nix develop` to install the tools you need. If you require more tools, aks for permision to add these to the nix flake.
 
 ## GenAI logging (required for the academic-integrity acknowledgement)
 
@@ -133,10 +134,14 @@ I have limited hours (semester 1 ≈ 10 hrs/week) the reminders below actually h
 All work here is defensive research on local code in this machine's sandbox: heap and memory-safety behaviour in Zig and other programming languages. These rules apply even if the environment seems to allow more. They sit alongside the academic-integrity rules above; where both apply, follow the stricter one. When restrictions apply please flag the user that they need to update the restrictions if the objectives defined are to be competed orelse modify the objectives.
 
 ### Read and write
-- `experiments/`: test programs, harnesses, fuzzers, crash reproductions
+- `experiments/`: test programs, harnesses, fuzzers, crash reproductions, project enviorments like flake.nix
 - `ai/`: the log, state and todo files, and `ai/files/`
 - `notes/`: all the notes about this dissertation
 - `deliverables/`: deviverables
+
+### Read, and only write when given explicit permission (ask every single time)
+- Anything in the project root
+- `flake.nix`: to install tools needed
 
 ### Read-only
 - `sources/private/papers/`: papers I've collected. Read, discuss, cite and log them normally. They are kept out of git only because the PDFs are not mine to redistribute. If a patched build is needed, copy it into `experiments/` first.
