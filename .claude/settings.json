@@ -1,10 +1,12 @@
 {
   "permissions": {
+    "defaultMode": "default",
     "allow": [
       "Edit(./experiments/**)",
       "Edit(./ai/**)",
       "Edit(./notes/**)",
       "Edit(./deliverables/**)",
+      "Edit(./sources/public/links.md)",
       "WebFetch(domain:nixos.org)",
       "WebFetch(domain:nix.dev)",
       "WebFetch(domain:ziglang.org)"
@@ -12,18 +14,30 @@
     "deny": [
       "WebSearch",
       "Read(./.env)",
+      "Read(~/.ssh/**)",
       "Bash(git push *)",
       "Edit(./CLAUDE.md)",
       "Edit(./AGENTS.md)",
       "Edit(./.claude/**)",
-      "Edit(./sources/**)"
+      "Edit(./sources/private/**)",
+      "Edit(./sources/confidential/**)",
+      "Edit(./sources/public/ai-guidelines/**)",
+      "mcp__claude_ai_Gmail",
+      "mcp__claude_ai_Claude_Docs",
+      "mcp__claude_ai_Google_Drive"
     ]
   },
   "sandbox": {
     "enabled": true,
     "allowUnsandboxedCommands": false,
     "failIfUnavailable": true,
-    "filesystem": { "denyRead": ["./.env"] },
-    "network": { "allowedDomains": [] }
+    "filesystem": {
+      "denyRead": ["~/", "./.env"],
+      "allowRead": ["."],
+      "denyWrite": ["./sources", "./CLAUDE.md", "./AGENTS.md", "./flake.nix", "./flake.lock"]
+    },
+    "network": {
+      "allowedDomains": []
+    }
   }
 }
