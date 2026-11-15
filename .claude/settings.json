@@ -1,11 +1,29 @@
 {
   "permissions": {
+    "allow": [
+      "Edit(./experiments/**)",
+      "Edit(./ai/**)",
+      "Edit(./notes/**)",
+      "Edit(./deliverables/**)",
+      "WebFetch(domain:nixos.org)",
+      "WebFetch(domain:nix.dev)",
+      "WebFetch(domain:ziglang.org)"
+    ],
     "deny": [
+      "WebSearch",
       "Read(./.env)",
-      "Bash(git push:*)",
+      "Bash(git push *)",
       "Edit(./CLAUDE.md)",
       "Edit(./AGENTS.md)",
-      "Edit(./.claude/**)"
+      "Edit(./.claude/**)",
+      "Edit(./sources/**)"
     ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "allowUnsandboxedCommands": false,
+    "failIfUnavailable": true,
+    "filesystem": { "denyRead": ["./.env"] },
+    "network": { "allowedDomains": [] }
   }
 }
