@@ -4,7 +4,7 @@ cd "$CLAUDE_PROJECT_DIR" || exit 0
 
 tmp=$(mktemp)
 before=$(export -p | sort)
-nix develop --command bash -c 'export -p > "$1"' _ "$tmp" >/dev/null 2>&1 || { rm -f "$tmp"; exit 0; }
+nix develop --command bash -c 'export -p > "$1"' _ "$tmp" >/dev/null 2>"$CLAUDE_PROJECT_DIR/.claude/hooks/nix-env.log" || { rm -f "$tmp"; exit 0; }
 after=$(sort "$tmp")
 rm -f "$tmp"
 
