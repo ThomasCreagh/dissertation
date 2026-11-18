@@ -14,9 +14,6 @@
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
           packages = [
-            # for sandboxing ai
-            pkgs.bubblewrap
-            pkgs.socat
             # pdftotext / pdftoppm: lets Claude Code read the papers in sources/private/papers
             pkgs.poppler-utils
           ];

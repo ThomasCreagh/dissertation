@@ -64,8 +64,9 @@ What is marked (CSU44099, per the official module page https://teaching.scss.tcd
 - **When it's unclear which side something falls on, ask me in the moment** before doing it, and default to treating it as research (mine) until I say otherwise.
 
 ## Repo conventions
+
 - `notes.md` template for experiments (see `experiments/experiment.md`): Question / What I ran / What happened / What I made of it / Decisions.
-- I start Claude from inside `nix develop`, so the flake's tools are already available. If you need a tool that isn't there, ask me to add it to `flake.nix` and give me the change; I'll apply it and re-enter the shell myself.
+- The flake's dev-shell environment is loaded into your Bash commands by hooks in `.claude/settings.json`: at session start, whenever `flake.nix` or `flake.lock` changes, and when the working directory changes. You can't run `nix` yourself (the sandbox blocks the Nix daemon), and you don't need to, don't tell me to restart from `nix develop`. If you need a tool that isn't there, give me the `flake.nix` change. Once it's saved, the environment reloads within a few seconds without a restart. Check with `which <tool>`.
 
 ## Skills
 

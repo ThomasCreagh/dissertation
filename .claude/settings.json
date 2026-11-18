@@ -34,10 +34,44 @@
     "filesystem": {
       "denyRead": ["~/", "./.env"],
       "allowRead": ["."],
-      "denyWrite": ["./sources", "./CLAUDE.md", "./AGENTS.md", "./flake.nix", "./flake.lock"]
+      "denyWrite": [
+        "./sources",
+        "./CLAUDE.md",
+        "./AGENTS.md",
+        "./flake.nix",
+        "./flake.lock"
+      ]
     },
     "network": {
       "allowedDomains": []
     }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/nix-env.sh",
+            "timeout": 300
+          }
+        ]
+      }
+    ],
+    "FileChanged": [
+      {
+        "matcher": "flake.nix|flake.lock",
+        "hooks": [
+          { "type": "command", "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/nix-env.sh", "timeout": 300 }
+        ]
+      }
+    ],
+    "CwdChanged": [
+      {
+        "hooks": [
+          { "type": "command", "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/nix-env.sh", "timeout": 300 }
+        ]
+      }
+    ]
   }
 }
