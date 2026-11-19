@@ -4,3 +4,4 @@ sources/confidential/*
 sources/private/
 sources/private/*
 nix-env.log
+!**/.claude/

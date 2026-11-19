@@ -16,3 +16,4 @@ disable-model-invocation: true
 4. Date each addition (`date '+%Y-%m-%d'`).
 5. Show Tom exactly what will be added or changed and get his confirmation before saving.
 6. If any note will feed into the dissertation, remind him it may need an `AI ref`.
+7. Do not include anything confidential.

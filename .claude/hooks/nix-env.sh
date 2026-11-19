@@ -10,5 +10,5 @@ rm -f "$tmp"
 
 comm -13 <(echo "$before") <(echo "$after") \
   | grep -vE '^declare -x (TMP|TMPDIR|TEMP|TEMPDIR|NIX_BUILD_TOP|SHLVL|PWD|OLDPWD|_)=' \
-  >> "$CLAUDE_ENV_FILE"
+  > "$CLAUDE_ENV_FILE"
 exit 0
