@@ -11,10 +11,10 @@ case "$tool" in
   WebFetch)
     url=$(jq -r '.tool_input.url' <<<"$input")
     detail="url: $url"
-    grep -qF -- "$url" sources/public/seen.md 2>/dev/null \
-      || echo "- $url" >> sources/public/seen.md ;;
+    grep -qF -- "$url" research/sources/public/seen.md 2>/dev/null \
+      || echo "- $url" >> research/sources/public/seen.md ;;
   *) exit 0 ;;
 esac
 
-printf -- '- %s | %s | %s | %s\n' "$ts" "$agent" "$tool" "$detail" >> ai/web-log.md
+printf -- '- %s | %s | %s | %s\n' "$ts" "$agent" "$tool" "$detail" >> research/ai/web-log.md
 exit 0

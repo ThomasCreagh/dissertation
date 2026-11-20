@@ -5,9 +5,9 @@ description: Update ai/state.md, the record of where the project is. Use when so
 
 # Updating the project state
 
-`ai/state.md` holds the project's state: the settled direction, what's been verified in the Zig source, paper findings, what's happended so far, open questions and what's been ruled out. `CLAUDE.md` holds the rules.
+`research/ai/state.md` holds the project's state: the settled direction, what's been verified in the Zig source, paper findings, what's happended so far, open questions and what's been ruled out. `CLAUDE.md` and `research/CLAUDE.md` hold the rules.
 
-1. Read `ai/state.md` in full first, so nothing is duplicated or contradicted.
+1. Read `research/ai/state.md` in full first, so nothing is duplicated or contradicted.
 2. Record only what actually happened:
    - Decisions: only ones Tom made, in his framing. Never record a decision he didn't make. If you are unsure ask if X is a decision.
    - Findings: only ones verified against a primary source, with the reference (file and line in the Zig source, or paper and section).

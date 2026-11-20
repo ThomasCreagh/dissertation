@@ -4,10 +4,10 @@
     "blockReadsOutsideWorkingDirectories": true,
     "allow": [
       "Edit(./experiments/**)",
-      "Edit(./ai/**)",
-      "Edit(./notes/**)",
-      "Edit(./deliverables/**)",
-      "Edit(./sources/public/links.md)",
+      "Edit(./research/ai/**)",
+      "Edit(./research/notes/**)",
+      "Edit(./research/deliverables/**)",
+      "Edit(./research/sources/public/links.md)",
       "WebFetch(domain:nixos.org)",
       "WebFetch(domain:nix.dev)",
       "WebFetch(domain:ziglang.org)"
@@ -18,14 +18,13 @@
       "Bash(git push *)",
       "Edit(./flake.nix)",
       "Edit(./flake.lock)",
-      "Edit(./ai/web-log.md)",
-      "Edit(./ai/seen.md)",
+      "Edit(./research/ai/web-log.md)",
       "Edit(./CLAUDE.md)",
-      "Edit(./AGENTS.md)",
+      "Edit(./research/CLAUDE.md)",
       "Edit(./.claude/**)",
-      "Edit(./sources/private/**)",
-      "Edit(./sources/confidential/**)",
-      "Edit(./sources/public/ai-guidelines/**)",
+      "Edit(./research/sources/private/**)",
+      "Edit(./research/sources/confidential/**)",
+      "Edit(./research/sources/public/ai-guidelines/**)",
       "mcp__claude_ai_Gmail",
       "mcp__claude_ai_Claude_Docs",
       "mcp__claude_ai_Google_Drive"
@@ -39,13 +38,12 @@
       "denyRead": ["~/", "./.env"],
       "allowRead": ["."],
       "denyWrite": [
-        "./sources",
+        "./research/sources",
         "./CLAUDE.md",
-        "./AGENTS.md",
+        "./research/CLAUDE.md",
         "./flake.nix",
         "./flake.lock",
-        "./ai/web-log.md",
-        "./ai/seen.md"
+        "./research/ai/web-log.md"
       ]
     },
     "network": {

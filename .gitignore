@@ -1,7 +1,4 @@
 .env
-sources/confidential/
-sources/confidential/*
-sources/private/
-sources/private/*
+research/
 nix-env.log
-!**/.claude/
+!/.claude/
